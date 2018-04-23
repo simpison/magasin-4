@@ -51,7 +51,7 @@ body {
     'left main main main main main upperright upperright'
     'left main main main main main lowerright lowerright';
   grid-gap: 10px;
-  background-color: #2196F3;
+  background-color: pink;
   padding: 10px;
   height: 580px;
 }

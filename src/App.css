@@ -39,7 +39,10 @@ body {
 .filter-item1 { grid-area: left; }
 .filter-item2 { 
   grid-area: main; 
-  
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 120px 120px 120px 120px 120px;
+  justify-content: center;
 }
 .filter-item3 { grid-area: upperright; }
 .filter-item4 { grid-area: lowerright; }
@@ -47,9 +50,9 @@ body {
 .filter-container {
   display: grid;
   grid-template-areas:
-    'left main main main main main upperright upperright'
-    'left main main main main main upperright upperright'
-    'left main main main main main lowerright lowerright';
+    'left main main main upperright upperright'
+    'left main main main upperright upperright'
+    'left main main main lowerright lowerright';
   grid-gap: 10px;
   background-color: pink;
   padding: 10px;
@@ -58,8 +61,15 @@ body {
 .filter-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
-  padding: 20px 0;
   font-size: 30px;
+  padding: 20px 0;
+}
+
+.category-btn{
+  border: none;
+  border-radius: 5px;
+  background-color: pink;
+
 }
 
 .grid-container {

@@ -6,16 +6,26 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      list: []
+      list: [],
+      category: [],
+      filter: []
     }
+
+    this.handleFiltering = this.handleFiltering.bind(this);
   }
 
   componentDidMount() {
     firebase.database().ref('rekvisita').on('value', snap => {
       const results = this.snapshotToArray(snap.child('items'));
+      const categories = [];
+      console.log(Array.isArray(categories))
+      snap.child('categories').forEach(function(cat) { 
+        categories.push(cat.key.toString())
+        });
 
       this.setState({
-        list: results
+        list: results,
+        category: categories,
       });
     });
   }
@@ -24,24 +34,57 @@ class App extends Component {
     const returnArr = [];
     snapshot.forEach(function(childSnapshot) {
         const item = childSnapshot.val();
-        //console.log(item.image);
-        //const url = firebase.storage().ref().child(item.image).getDownloadURL().getResult();
-        //console.log(url);
         item.key = childSnapshot.key;
         returnArr.push(item);
     });
     return returnArr;
 };
 
+  // fetchResults(){
+  //   this.state.filter foreach
+  //     const string +/ /
+  //   firebase.database().ref('rekvisita/'+string).orderByChild(child).equalTo(value).on('value', snap => {
+  //     const results = this.snapshotToArray(snap);
+      
+  //     console.log(results);
+  //     this.setState({
+  //       list: results,
+  //     });
+  //   });
+  // }
+
+
+  handleFiltering(id){
+    const newFilter = this.state.filter;
+    newFilter.push(id);
+    this.setState({
+      filter: newFilter
+    })
+    firebase.database().ref('rekvisita/categories').on('value', snap => {
+      const subcategories = snap.child(id).val();
+      if(subcategories){
+        this.setState({
+          category: subcategories
+        });
+      }
+    });
+
+  }
+
   render() {
     const result = this.state.list;
+    console.log(this.state.category);
     return (
       <div className="page">
-        <Filter/>
+        <Filter 
+            categories={this.state.category}
+            filter={this.state.filter}
+            onFiltering={this.handleFiltering}
+        />
         {result && 
           <div className="grid-container">
           {this.state.list.map(item =>
-            <Item object={item}/>
+            <Item object={item} key={item.id}/>
           )}
           </div> 
         }
@@ -56,10 +99,10 @@ class Item extends Component {
   constructor(){
     super();
     this.state = {
-      imgUrl:''
+      imgUrl:'',
+      open: false
     }
   }
-
 
   componentDidMount() {
     firebase.storage().ref().child(this.props.object.image).getDownloadURL().then(url => 
@@ -115,11 +158,28 @@ class Filter extends Component {
   }
 
   render(){
+    const categories = this.props.categories;
+    const filter = this.props.filter;
     return (
       <div className={this.state.open ? "filter open-filter" : "filter"}>
         <div className="filter-container">
-          <div className="filter-item1">Filter</div>
-          <div className="filter-item2">Main</div>
+          <div className="filter-item1">
+            <h3>Filter</h3>
+            {filter.map(fil =>
+              <p>{fil}</p>
+            )}
+          </div>
+          <div className="filter-item2">
+          {categories.map(cat =>
+            <button
+              onClick={() => this.props.onFiltering(cat)}
+              key={cat}
+              className="category-btn"
+            >
+              {cat}
+            </button>
+          )}
+          </div>
           <div className="filter-item3">Upper</div>  
           <div className="filter-item4">Lower</div>
         </div>

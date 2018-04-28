@@ -102,6 +102,8 @@ class Item extends Component {
       imgUrl:'',
       open: false
     }
+
+    this.toggleExpand = this.toggleExpand.bind(this);
   }
 
   componentDidMount() {
@@ -110,6 +112,12 @@ class Item extends Component {
         imgUrl: url
       })
     );
+  }
+
+  toggleExpand(){
+    this.setState({
+      open: !this.state.open
+    })
   }
 
   getReturnDate(string){
@@ -124,7 +132,11 @@ class Item extends Component {
   render(){
     const item = this.props.object;
     return (
-      <div key={item.id} className="grid-item">
+      <div 
+          key={item.id} 
+          className={this.state.open ? "grid-item-expand" : "grid-item"}
+          onClick={this.toggleExpand}
+        >
         <div className="img-container">
           <img src={this.state.imgUrl} alt="hey" width="10%" height="auto"/><br/>
         </div>

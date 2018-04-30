@@ -1,24 +1,40 @@
 import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase';
+import { Link, Route, Switch } from 'react-router-dom';
 
-class App extends Component {
+const App = () => 
+  <Main />
+
+const Main = () => (
+  <main>
+    <Switch>
+      <Route exact path='/' component={Home}/>
+      <Route path='/rekvisita' component={Search} />
+      <Route path='/kostym' component={Search} />
+      <Route path='/mobel' component={Search} />
+    </Switch>
+  </main>
+)
+
+class Search extends Component {
   constructor(){
     super();
     this.state = {
+      department: '',
       list: [],
       category: [],
-      filter: []
+      filter: {cat:'',price:'',}
     }
 
     this.handleFiltering = this.handleFiltering.bind(this);
   }
 
   componentDidMount() {
-    firebase.database().ref('rekvisita').on('value', snap => {
+    const department = this.props.location.pathname.substr(1);
+    firebase.database().ref(department).on('value', snap => {
       const results = this.snapshotToArray(snap.child('items'));
       const categories = [];
-      console.log(Array.isArray(categories))
       snap.child('categories').forEach(function(cat) { 
         categories.push(cat.key.toString())
         });
@@ -55,12 +71,13 @@ class App extends Component {
 
 
   handleFiltering(id){
+    const department = this.props.location.pathname.substr(1);
     const newFilter = this.state.filter;
     newFilter.push(id);
     this.setState({
       filter: newFilter
     })
-    firebase.database().ref('rekvisita/categories').on('value', snap => {
+    firebase.database().ref(department+'/categories').on('value', snap => {
       const subcategories = snap.child(id).val();
       if(subcategories){
         this.setState({
@@ -75,6 +92,7 @@ class App extends Component {
     const result = this.state.list;
     console.log(this.state.category);
     return (
+
       <div className="page">
         <Filter 
             categories={this.state.category}
@@ -199,10 +217,16 @@ class Filter extends Component {
           OPEN
         </button>
       </div>
-
-
   )}
-
 }
+
+const Home = () =>
+    <nav>
+      <ul>
+        <li><Link to='/kostym'>Kostym</Link></li>
+        <li><Link to='/rekvisita'>Rekvisita</Link></li>
+        <li><Link to='/mobel'>Möbel</Link></li>
+      </ul>
+    </nav>
 
 export default App;

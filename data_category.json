@@ -1,0 +1,101 @@
+[
+{
+"rekvisita": 
+		{
+			"category":[
+				{"main":"affär","sub":["matförpackning","godis","tobak","rengöring","plexiställ","prislappspistol","smink"]},
+				{"main":"baby","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"bar","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"bestik","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"blomma","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"bädd/textil","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"camping","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"elektronik","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"fejk","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"förbrukningsvara","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"instrument","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
+				{"main":"jul","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]}
+			],
+			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
+			"material":["trä","plast","papp","metall","tyg"]	
+		},
+"mobel": 
+		{
+			"category":[
+				{"main":"växt","sub":["palm","träd","murgröna","lösa blad"]},
+				{"main":"stol","sub":["kontorsstol","stapelstol","stol epok","tronstol","pall","barpall"]},
+				{"main":"fåtölj","sub":["gammal fåtölj","ny fotölj"]},
+				{"main":"soffa","sub":["gammal soffa","ny soffa","pinnsoffa","kökssoffa"]},
+				{"main":"säng","sub":["sängbotten","träsäng","madrass","sänggavel","fällsäng","militärsäng"]},
+				{"main":"spegel","sub":["golvspegel","väggspegel","sminkspegel"]},
+				{"main":"djur","sub":["älghuvud","bisonhuvud","renhuvud","ren","får","orre","påfågel"]},
+				{"main":"skåp","sub":["byrå","klädskåp","vitrinskåp","bokhylla"]},
+				{"main":"bar","sub":["stor bar","liten bar","jordglobsbar"]},
+				{"main":"kök/badrum","sub":["toastol","handfat","badkar","badrumsskåp","köksskåp","köksö","kryddhylla"]}
+			],
+			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
+			"material":["trä","plast","papp","metall","tyg"]	
+		},
+"kostym":
+		{
+			"category":[
+				{"main":"antiken", "code":"a"},
+				{"main":"medeltiden", "code":"b"},
+				{"main":"1500-1600", "code":"c"},
+				{"main":"1600-1715", "code":"d"},
+				{"main":"1715-1770", "code":"e"},
+				{"main":"1770-1800", "code":"f"},
+				{"main":"1800-1830", "code":"g"},
+				{"main":"1830-1850", "code":"h"},
+				{"main":"1850-1870", "code":"i"},
+				{"main":"1870-1890", "code":"j"},
+				{"main":"1900", "code":"k"},
+				{"main":"1910", "code":"l"},
+				{"main":"1920", "code":"m"},
+				{"main":"1930", "code":"n"},
+				{"main":"1940", "code":"o"},
+				{"main":"1950", "code":"p"},
+				{"main":"1960", "code":"q"},
+				{"main":"1970", "code":"r"},
+				{"main":"1980", "code":"s"},
+				{"main":"1990", "code":"t"},
+				{"main":"2000", "code":"00"},
+				{"main":"2010", "code":"10"},
+				{"main":"folkdräkt", "code":"u"},
+				{"main":"underhållning", "code":"v"},
+				{"main":"liturgiskt", "code":"x"},
+				{"main":"yrke", "code":"y"},
+				{"main":"militäruniformer", "code":"z"},
+				{"main":"sport", "code":"å"},
+				{"main":"yrke-allmänt", "code":"ä"},
+				{"main":"patinerat", "code":"ö"}
+			],
+			"type":[
+				{"name":"byxa", "code":"a"},
+				{"name":"blus", "code":"b"},
+				{"name":"kavaj", "code":"c"},
+				{"name":"kostym", "code":"d"},
+				{"name":"väst", "code":"e"},
+				{"name":"klänning", "code":"f"},
+				{"name":"shorts", "code":"g"},
+				{"name":"kjol", "code":"h"},
+				{"name":"slips", "code":"i"},
+				{"name":"smycke", "code":"j"},
+				{"name":"hatt", "code":"k"},
+				{"name":"halsduk", "code":"l"},
+				{"name":"kappa", "code":"m"},
+				{"name":"badkläder", "code":"n"},
+				{"name":"skjorta", "code":"o"},
+				{"name":"skor", "code":"p"},
+				{"name":"jeans", "code":"q"},
+				{"name":"väska", "code":"r"}
+			],
+			"size":[
+				{"main":"dam","sub":["34","36","38","40","42","44","46","S","M","L"]},
+				{"main":"herr","sub":["46","48","50","52","54","56","58","S","M","L"]},
+				{"main":"pojk","sub":["98","104","110","116","122","128","140","152"]},
+				{"main":"flick","sub":["98","104","110","116","122","128","140","152"]}
+			]
+		}
+}
+]

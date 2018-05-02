@@ -66,6 +66,32 @@ body {
   padding: 0px 0;
 }
 
+.filter-btn-main {
+  display:block;
+  margin: 2px 0px 2px 30px;
+  border:none;
+  border-radius: 15px;
+  background-color: #37033b;
+  color: white;
+  padding:5px 30px 7px 10px;
+  animation: pop 0.3s linear 1;
+}
+
+@keyframes pop{
+  50%  {transform: scale(1.1);}
+}
+
+.filter-btn-sub {
+  display:block;
+  margin: 2px 0px 2px 50px;
+  border:none;
+  border-radius: 15px;
+  background-color: #16998c;
+  color:white;
+  padding:5px 30px 7px 10px;
+  animation: pop 0.3s linear 1;
+}
+
 .category-btn{
   border: none;
   border-radius: 5px;
@@ -142,6 +168,10 @@ body {
   font-size: 18pt;
 }
 
+.category3 {
+  font-size: 12pt;
+}
+
 .status-green, .status-red {
   width: 100%;
   height: 20px;
@@ -177,7 +207,7 @@ body {
     left: -25px;
     position: relative;
     margin-bottom: 80px;
-    top:30px;
+    top:10px;
     font-size: 10pt;
     text-align: center;
     color: #fff;

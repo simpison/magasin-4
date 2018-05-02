@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import * as firebase from 'firebase';
 import { Link, Route, Switch } from 'react-router-dom';
+import Filter from './Filter.js';
+import Item from './Item.js';
+
 
 const App = () => 
   <Main />
@@ -23,27 +26,52 @@ class Search extends Component {
     this.state = {
       department: '',
       list: [],
-      category: [],
-      filter: {cat:'',price:'',}
+      categories: [],
+      currentCat: [],
+      filter: []
     }
 
     this.handleFiltering = this.handleFiltering.bind(this);
+    this.removeFilter = this.removeFilter.bind(this);
+    this.fetchResults = this.fetchResults.bind(this);
   }
 
-  componentDidMount() {
-    const department = this.props.location.pathname.substr(1);
-    firebase.database().ref(department).on('value', snap => {
-      const results = this.snapshotToArray(snap.child('items'));
-      const categories = [];
-      snap.child('categories').forEach(function(cat) { 
-        categories.push(cat.key.toString())
+  componentDidMount(){
+    const department = this.props.location.pathname.substring(1);
+    const db = firebase.firestore();
+    db.collection("categories").doc(department).get().then((doc) => {
+      if (doc.exists) {
+          console.log("Document data:", doc.data().category);
+          var categories = doc.data().category
+          //var stringCategories = categories.map(category => category.main)
+          this.setState({
+            categories: categories,
+            currentCat: categories
+          });
+      } else {
+          console.log("No such document!");
+      }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+
+    const newResult = [];
+    console.log("DEP "+department)
+    db.collection("items").where("department", "==", department)
+        .get()
+        .then((col) => {
+            col.forEach((doc) => {
+                newResult.push(doc.data());
+            });
+
+            this.setState({
+              list: newResult
+          });
+        })
+        .catch(function(error) {
+            console.log("Error getting documents: ", error);
         });
 
-      this.setState({
-        list: results,
-        category: categories,
-      });
-    });
   }
 
   snapshotToArray(snapshot) {
@@ -56,48 +84,97 @@ class Search extends Component {
     return returnArr;
 };
 
-  // fetchResults(){
-  //   this.state.filter foreach
-  //     const string +/ /
-  //   firebase.database().ref('rekvisita/'+string).orderByChild(child).equalTo(value).on('value', snap => {
-  //     const results = this.snapshotToArray(snap);
-      
-  //     console.log(results);
-  //     this.setState({
-  //       list: results,
-  //     });
-  //   });
-  // }
+  fetchResults(){
+    const db = firebase.firestore();
+    const newResult = [];
+    console.log(this.state.filter[0].value);
+    const filter = this.state.filter;
+    for(var i=0;i<filter.length;i++){
+      if(filter[i].parent){
+        console.log(filter.value);
+        db.collection("items").where("subCategory", "==", filter.value)
+            .get()
+            .then((col) => {
+                col.forEach((doc) => {
+                    newResult.push(doc.data());
+                    console.log(doc.data().subCategory);
+                });
+
+                this.setState({
+                  list: newResult
+              });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            });
+      }
+    }
+  }
 
 
-  handleFiltering(id){
-    const department = this.props.location.pathname.substr(1);
+  handleFiltering(obj){
     const newFilter = this.state.filter;
-    newFilter.push(id);
+    if(!obj.parent){
+      const dict = [];
+      obj.sub.map( sub => {
+        dict.push({
+          main: sub,
+          parent: obj.main
+        });
+      });
+
+      newFilter.push({
+        value: obj.main
+      });
+
+      this.setState({
+        currentCat: dict,
+        filter: newFilter
+      });
+
+
+    }else{
+      newFilter.push({
+        value: obj.main,
+        parent: obj.parent
+      });
+
+      this.setState({
+        filter: newFilter
+      });
+    }
+
+    this.fetchResults();
+  }
+
+  removeFilter(filter){
+    const index = [];
+    const newFilter = this.state.filter;
+
+    for(var i = 0; i < newFilter.length; i++){
+      if(newFilter[i].value === filter.value || newFilter[i].parent === filter.value){
+        index.push(i);
+      }
+    }
+
+    for (var i = index.length -1; i >= 0; i--)
+       newFilter.splice(index[i],1);
+
     this.setState({
       filter: newFilter
     })
-    firebase.database().ref(department+'/categories').on('value', snap => {
-      const subcategories = snap.child(id).val();
-      if(subcategories){
-        this.setState({
-          category: subcategories
-        });
-      }
-    });
 
   }
 
   render() {
     const result = this.state.list;
-    console.log(this.state.category);
     return (
-
       <div className="page">
         <Filter 
-            categories={this.state.category}
+            categories={this.state.currentCat}
             filter={this.state.filter}
             onFiltering={this.handleFiltering}
+            onRemoveFilter={this.removeFilter}
         />
         {result && 
           <div className="grid-container">
@@ -112,113 +189,6 @@ class Search extends Component {
 }
 
 
-
-class Item extends Component {
-  constructor(){
-    super();
-    this.state = {
-      imgUrl:'',
-      open: false
-    }
-
-    this.toggleExpand = this.toggleExpand.bind(this);
-  }
-
-  componentDidMount() {
-    firebase.storage().ref().child(this.props.object.image).getDownloadURL().then(url => 
-      this.setState({
-        imgUrl: url
-      })
-    );
-  }
-
-  toggleExpand(){
-    this.setState({
-      open: !this.state.open
-    })
-  }
-
-  getReturnDate(string){
-    const date = new Date(string);
-    date.setDate(date.getDate()+14);
-    const y = date.getFullYear();
-    const m = date.getMonth();
-    const d = date.getDate();
-    return y+'-'+ (m<10 ? '0'+(m+1) : (m+1)) +'-'+(d<10 ? 0+d : d);
-  }
-
-  render(){
-    const item = this.props.object;
-    return (
-      <div 
-          key={item.id} 
-          className={this.state.open ? "grid-item-expand" : "grid-item"}
-          onClick={this.toggleExpand}
-        >
-        <div className="img-container">
-          <img src={this.state.imgUrl} alt="hey" width="10%" height="auto"/><br/>
-        </div>
-        <span className="category1">{item.category}</span><br/>
-        <span className="category2">{item.subcategory}</span><br/>
-        <span>{item.price}</span>
-        <span>{item.price_group}</span><br/>
-        <div className={item.available ? "ribbon-green" : "ribbon-red"}>
-          <span>{item.available ? 'Tillgänglig' : 'Åter: '+ this.getReturnDate(item.rental_date)}</span>
-        </div>
-      </div>
-      );
-  }
-}
-
-class Filter extends Component {
-  constructor(){
-    super();
-    this.state = {
-      open: false
-    }
-    this.toggleFilter = this.toggleFilter.bind(this);
-  }
-
-  toggleFilter(){
-    const state = !this.state.open;
-    this.setState({
-      open: state
-    })
-    console.log(this.state.open)
-  }
-
-  render(){
-    const categories = this.props.categories;
-    const filter = this.props.filter;
-    return (
-      <div className={this.state.open ? "filter open-filter" : "filter"}>
-        <div className="filter-container">
-          <div className="filter-item1">
-            <h3>Filter</h3>
-            {filter.map(fil =>
-              <p>{fil}</p>
-            )}
-          </div>
-          <div className="filter-item2">
-          {categories.map(cat =>
-            <button
-              onClick={() => this.props.onFiltering(cat)}
-              key={cat}
-              className="category-btn"
-            >
-              {cat}
-            </button>
-          )}
-          </div>
-          <div className="filter-item3">Upper</div>  
-          <div className="filter-item4">Lower</div>
-        </div>
-        <button onClick={this.toggleFilter} className="open-filter-btn">
-          OPEN
-        </button>
-      </div>
-  )}
-}
 
 const Home = () =>
     <nav>

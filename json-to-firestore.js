@@ -1,7 +1,7 @@
 const admin = require('./node_modules/firebase-admin');
 const serviceAccount = require("./service-key.json");
 
-const data = require("./data.json");
+const data = require("./data_category.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -12,9 +12,11 @@ data && Object.keys(data).forEach(key => {
     const nestedContent = data[key];
 
     if (typeof nestedContent === "object") {
+        var count = 0;
         Object.keys(nestedContent).forEach(docTitle => {
+            console.log(docTitle);
             admin.firestore()
-                .collection(key)
+                .collection("categories")
                 .doc(docTitle)
                 .set(nestedContent[docTitle])
                 .then((res) => {
@@ -23,6 +25,7 @@ data && Object.keys(data).forEach(key => {
                 .catch((error) => {
                     console.error("Error writing document: ", error);
                 });
+            count++;
         });
     }
 });

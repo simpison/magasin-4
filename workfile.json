@@ -1,0 +1,904 @@
+[
+  {
+    "42": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 19, 
+      "color": "svart", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 42, 
+      "quantity": 2
+    }, 
+    "48": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 7, 
+      "color": "gul", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 1, 
+      "id": 48, 
+      "quantity": 1
+    }, 
+    "43": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 11, 
+      "color": "vit", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "b\u00e4dd/textil", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 43, 
+      "quantity": 2
+    }, 
+    "49": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 13, 
+      "color": "lila", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "b\u00e4dd/textil", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 49, 
+      "quantity": 2
+    }, 
+    "24": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 14, 
+      "color": "brun", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "b\u00e4dd/textil", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 24, 
+      "quantity": 2
+    }, 
+    "25": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 10, 
+      "color": "gr\u00f6n", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 25, 
+      "quantity": 3
+    }, 
+    "26": {
+      "available": false, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 4, 
+      "color": "gul", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "camping", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": "2017-09-02T23:10:00.619188", 
+      "location": "malm\u00f6", 
+      "quantityMax": 1, 
+      "id": 26, 
+      "quantity": 0
+    }, 
+    "27": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 15, 
+      "color": "lila", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 27, 
+      "quantity": 3
+    }, 
+    "20": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 17, 
+      "color": "svart", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 20, 
+      "quantity": 1
+    }, 
+    "21": {
+      "available": false, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 12, 
+      "color": "vit", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-11-15T23:10:00.619137", 
+      "location": "stockholm", 
+      "quantityMax": 2, 
+      "id": 21, 
+      "quantity": 0
+    }, 
+    "22": {
+      "available": false, 
+      "subCategory": "lakan", 
+      "priceGroup": 3, 
+      "color": "beige", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "baby", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-08-13T23:10:00.619150", 
+      "location": "farsta", 
+      "quantityMax": 4, 
+      "id": 22, 
+      "quantity": 0
+    }, 
+    "23": {
+      "available": false, 
+      "subCategory": "lakan", 
+      "priceGroup": 24, 
+      "color": "bl\u00e5", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-05-26T23:10:00.619162", 
+      "location": "malm\u00f6", 
+      "quantityMax": 2, 
+      "id": 23, 
+      "quantity": 0
+    }, 
+    "46": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 5, 
+      "color": "brun", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "blomma", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 46, 
+      "quantity": 4
+    }, 
+    "47": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 15, 
+      "color": "gr\u00f6n", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 1, 
+      "id": 47, 
+      "quantity": 1
+    }, 
+    "44": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 15, 
+      "color": "beige", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-11-28T23:10:00.619346", 
+      "location": "\u00e4lta", 
+      "quantityMax": 4, 
+      "id": 44, 
+      "quantity": 0
+    }, 
+    "45": {
+      "available": false, 
+      "subCategory": "bestik", 
+      "priceGroup": 23, 
+      "color": "bl\u00e5", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "camping", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": "2017-06-16T23:10:00.619358", 
+      "location": "farsta", 
+      "quantityMax": 1, 
+      "id": 45, 
+      "quantity": 0
+    }, 
+    "28": {
+      "available": false, 
+      "subCategory": "lakan", 
+      "priceGroup": 17, 
+      "color": "orange", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": "2018-04-20T23:10:00.619209", 
+      "location": "farsta", 
+      "quantityMax": 1, 
+      "id": 28, 
+      "quantity": 0
+    }, 
+    "29": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 23, 
+      "color": "rosa", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "instrument", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 29, 
+      "quantity": 1
+    }, 
+    "40": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 7, 
+      "color": "rosa", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "b\u00e4dd/textil", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 40, 
+      "quantity": 3
+    }, 
+    "41": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 18, 
+      "color": "r\u00f6d", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": "2018-02-24T23:10:00.619316", 
+      "location": "\u00f6stermalm", 
+      "quantityMax": 1, 
+      "id": 41, 
+      "quantity": 0
+    }, 
+    "1": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 1, 
+      "color": "bl\u00e5", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 1, 
+      "quantity": 1
+    }, 
+    "0": {
+      "available": true, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 25, 
+      "color": "beige", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 0, 
+      "quantity": 3
+    }, 
+    "3": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 8, 
+      "color": "gr\u00f6n", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 3, 
+      "quantity": 3
+    }, 
+    "2": {
+      "available": true, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 21, 
+      "color": "brun", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 2, 
+      "quantity": 1
+    }, 
+    "5": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 24, 
+      "color": "lila", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "baby", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-09-20T23:10:00.618985", 
+      "location": "tyres\u00f6", 
+      "quantityMax": 4, 
+      "id": 5, 
+      "quantity": 0
+    }, 
+    "4": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 1, 
+      "color": "gul", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "instrument", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 4, 
+      "quantity": 2
+    }, 
+    "7": {
+      "available": true, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 5, 
+      "color": "rosa", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 7, 
+      "quantity": 1
+    }, 
+    "6": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 17, 
+      "color": "orange", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "instrument", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 6, 
+      "quantity": 2
+    }, 
+    "9": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 25, 
+      "color": "svart", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 9, 
+      "quantity": 2
+    }, 
+    "8": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 15, 
+      "color": "r\u00f6d", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "jul", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 8, 
+      "quantity": 1
+    }, 
+    "13": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 17, 
+      "color": "brun", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 13, 
+      "quantity": 1
+    }, 
+    "12": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 6, 
+      "color": "bl\u00e5", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "bar", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2017-06-08T23:10:00.619058", 
+      "location": "\u00f6stermalm", 
+      "quantityMax": 4, 
+      "id": 12, 
+      "quantity": 0
+    }, 
+    "11": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 18, 
+      "color": "beige", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "bar", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 11, 
+      "quantity": 1
+    }, 
+    "10": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 6, 
+      "color": "vit", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": "2017-12-19T23:10:00.619034", 
+      "location": "\u00f6stermalm", 
+      "quantityMax": 1, 
+      "id": 10, 
+      "quantity": 0
+    }, 
+    "39": {
+      "available": true, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 9, 
+      "color": "orange", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 39, 
+      "quantity": 1
+    }, 
+    "38": {
+      "available": true, 
+      "subCategory": "reng\u00f6ring", 
+      "priceGroup": 13, 
+      "color": "lila", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "aff\u00e4r", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 38, 
+      "quantity": 3
+    }, 
+    "15": {
+      "available": true, 
+      "subCategory": "nappflaska", 
+      "priceGroup": 3, 
+      "color": "gul", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "blomma", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 15, 
+      "quantity": 1
+    }, 
+    "14": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 11, 
+      "color": "gr\u00f6n", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 14, 
+      "quantity": 1
+    }, 
+    "17": {
+      "available": false, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 19, 
+      "color": "orange", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2018-04-04T23:10:00.619101", 
+      "location": "\u00f6stermalm", 
+      "quantityMax": 2, 
+      "id": 17, 
+      "quantity": 0
+    }, 
+    "16": {
+      "available": true, 
+      "subCategory": "lakan", 
+      "priceGroup": 19, 
+      "color": "lila", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 2, 
+      "id": 16, 
+      "quantity": 2
+    }, 
+    "19": {
+      "available": true, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 14, 
+      "color": "r\u00f6d", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "elektronik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 19, 
+      "quantity": 3
+    }, 
+    "32": {
+      "available": true, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 3, 
+      "color": "vit", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 32, 
+      "quantity": 1
+    }, 
+    "31": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 21, 
+      "color": "svart", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 31, 
+      "quantity": 2
+    }, 
+    "30": {
+      "available": false, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 25, 
+      "color": "r\u00f6d", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": "2018-04-26T23:10:00.619228", 
+      "location": "tyres\u00f6", 
+      "quantityMax": 5, 
+      "id": 30, 
+      "quantity": 0
+    }, 
+    "37": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 23, 
+      "color": "gul", 
+      "image": "katt1.jpg", 
+      "material": [
+        "plast"
+      ], 
+      "mainCategory": "f\u00f6rbrukningsvara", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 3, 
+      "id": 37, 
+      "quantity": 1
+    }, 
+    "36": {
+      "available": true, 
+      "subCategory": "b\u00e4rsele", 
+      "priceGroup": 22, 
+      "color": "gr\u00f6n", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tr\u00e4"
+      ], 
+      "mainCategory": "fejk", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 1, 
+      "id": 36, 
+      "quantity": 1
+    }, 
+    "35": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 22, 
+      "color": "brun", 
+      "image": "katt1.jpg", 
+      "material": [
+        "tyg"
+      ], 
+      "mainCategory": "bar", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 4, 
+      "id": 35, 
+      "quantity": 4
+    }, 
+    "34": {
+      "available": true, 
+      "subCategory": "tallrik", 
+      "priceGroup": 8, 
+      "color": "bl\u00e5", 
+      "image": "katt1.jpg", 
+      "material": [
+        "metall"
+      ], 
+      "mainCategory": "instrument", 
+      "department": "rekvisita", 
+      "individual": true, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 1, 
+      "id": 34, 
+      "quantity": 1
+    }, 
+    "33": {
+      "available": true, 
+      "subCategory": "b\u00e4dd", 
+      "priceGroup": 14, 
+      "color": "beige", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "baby", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 33, 
+      "quantity": 2
+    }, 
+    "18": {
+      "available": true, 
+      "subCategory": "bestik", 
+      "priceGroup": 6, 
+      "color": "rosa", 
+      "image": "katt1.jpg", 
+      "material": [
+        "papp"
+      ], 
+      "mainCategory": "bestik", 
+      "department": "rekvisita", 
+      "individual": false, 
+      "rentalDate": null, 
+      "location": null, 
+      "quantityMax": 5, 
+      "id": 18, 
+      "quantity": 5
+    }
+  }
+]

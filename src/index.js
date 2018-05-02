@@ -5,12 +5,14 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import * as firebase from 'firebase';
 import { BrowserRouter } from 'react-router-dom';
+require("firebase/firestore");
+
 
 const config = {
     apiKey: "AIzaSyA7R4uUui3lXfWZXh_RySDaItOo2IH5Zl8",
     authDomain: "magasin4-f856e.firebaseapp.com",
     databaseURL: "https://magasin4-f856e.firebaseio.com",
-    //projectId: "magasin4-f856e",
+    projectId: "magasin4-f856e",
     storageBucket: "magasin4-f856e.appspot.com",
     //messagingSenderId: "220190684120"
   };

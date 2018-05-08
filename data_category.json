@@ -5,19 +5,19 @@
 			"category":[
 				{"main":"affär","sub":["matförpackning","godis","tobak","rengöring","plexiställ","prislappspistol","smink"]},
 				{"main":"baby","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"bar","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"bestik","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"blomma","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"bädd/textil","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"camping","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"elektronik","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"fejk","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"förbrukningsvara","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"instrument","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]},
-				{"main":"jul","sub":["nappflaska","tallrik","bestik","bärsele","lakan","bädd"]}
+				{"main":"bar","sub":["flaska","burk","shaker","ishink","sifon","champkyl"]},
+				{"main":"bestik","sub":["modern","epok","R.F","N.F","bakelit","plast","trä","smide"]},
+				{"main":"blomma","sub":["kruka/vas","ampel","plastblomma","vattenkanna","vattenspruta"]},
+				{"main":"bädd/textil","sub":["duk","servett","lakan","påslakan","örngott","kudde","täcke","filt","handduk"]},
+				{"main":"camping","sub":["sovsäck","liggunderlag","stormkök","kåsa","ryggsäck"]},
+				{"main":"elektronik","sub":["dator","datormus","tangentbord","radio","skivspelare","grammofon","TV"]},
+				{"main":"fejk","sub":["mat","pryl"]},
+				{"main":"förbrukvara","sub":["pizzakartong","snabbmatsförp","engångsbestik","kaffekopp","sugrör","servett"]},
+				{"main":"instrument","sub":["blåsinstrument","munspel","tamburin","maraccas","dragspel","slagverk","gitarr","fiol","fodral/väska"]},
+				{"main":"jul","sub":["paket","julkulor","julstrumpor","adventsljusstake","julstjärna","glitter","julgransbelysning","prydnadstomte"]}
 			],
 			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
-			"material":["trä","plast","papp","metall","tyg"]	
+			"material":["trä","plast","papp","metall","tyg","bakelit"]	
 		},
 "mobel": 
 		{
@@ -34,7 +34,7 @@
 				{"main":"kök/badrum","sub":["toastol","handfat","badkar","badrumsskåp","köksskåp","köksö","kryddhylla"]}
 			],
 			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
-			"material":["trä","plast","papp","metall","tyg"]	
+			"material":["trä","plast","papp","metall","tyg","bakelit"]	
 		},
 "kostym":
 		{

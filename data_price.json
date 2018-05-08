@@ -1,9 +1,32 @@
 [
-{
-"price": 
-		{
-			"":,
-			"":,
-		}
-}
+	{
+
+		"1":{"priceGroup":1,"price":33},
+		"2":{"priceGroup":2,"price":33},
+		"3":{"priceGroup":3,"price":33},
+		"4":{"priceGroup":4,"price":33},
+		"5":{"priceGroup":5,"price":33},
+		"6":{"priceGroup":6,"price":33},
+		"7":{"priceGroup":7,"price":33},
+		"8":{"priceGroup":8,"price":33},
+		"9":{"priceGroup":9,"price":33},
+		"10":{"priceGroup":10,"price":33},
+		"11":{"priceGroup":11,"price":33},
+		"12":{"priceGroup":12,"price":33},
+		"13":{"priceGroup":13,"price":33},
+		"14":{"priceGroup":14,"price":33},
+		"15":{"priceGroup":15,"price":33},
+		"16":{"priceGroup":16,"price":33},
+		"17":{"priceGroup":17,"price":33},
+		"18":{"priceGroup":18,"price":33},
+		"19":{"priceGroup":19,"price":33},
+		"20":{"priceGroup":20,"price":33},
+		"21":{"priceGroup":21,"price":33},
+		"22":{"priceGroup":22,"price":33},
+		"23":{"priceGroup":23,"price":33},
+		"24":{"priceGroup":24,"price":33},
+		"25":{"priceGroup":25,"price":33},
+		"26":{"priceGroup":26,"price":33},
+		"27":{"priceGroup":27,"price":33}
+	}
 ]

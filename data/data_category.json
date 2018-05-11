@@ -14,10 +14,22 @@
 				{"main":"fejk","sub":["mat","pryl"]},
 				{"main":"förbrukvara","sub":["pizzakartong","snabbmatsförp","engångsbestik","kaffekopp","sugrör","servett"]},
 				{"main":"instrument","sub":["blåsinstrument","munspel","tamburin","maraccas","dragspel","slagverk","gitarr","fiol","fodral/väska"]},
-				{"main":"jul","sub":["paket","julkulor","julstrumpor","adventsljusstake","julstjärna","glitter","julgransbelysning","prydnadstomte"]}
+				{"main":"jul","sub":["paket","julkulor","julstrumpor","adventsljusstake","julstjärna","glitter","julgransbelysning","prydnadstomte"]},
+				{"main":"vapen","sub":["svärd","sablar","knivar","gevär","pistol","höllster"]},
+				{"main":"konstnär","sub":["färger","penslar","skiss","målarduk"]},
+				{"main":"telefoner","sub":["epok","siffersnurr","knappar","trådlösa"]},
+				{"main":"kök","sub":["tenn","silver","kastrull","grytor"]},
+				{"main":"leksaker","sub":["lego","robotar","barbie","klossar"]},
+				{"main":"väskor","sub":["ryggsäck","tygkasse","midjeväska","portfölj"]},
+				{"main":"skulptur","sub":["modernt","religöst","epok"]},
+				{"main":"labb","sub":["provrör","brännare","apparater","tänger"]},
+				{"main":"sybehör","sub":["nål","tråd","dynor","garn"]},
+				{"main":"sport","sub":["badminton","dart","simning","bollar"]},
+				{"main":"lampor","sub":["lampskärm","taklampor","golvlampor","vägglampor"]},
+				{"main":"sjukhus","sub":["förband","anatomi","operation","apparater"]}
 			],
 			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
-			"material":["trä","plast","papp","metall","tyg","bakelit"]	
+			"material":["trä","plast","papp","metall","stål","textil","glas","porslin","sten","gummi","betong"]	
 		},
 "mobel": 
 		{
@@ -31,10 +43,23 @@
 				{"main":"djur","sub":["älghuvud","bisonhuvud","renhuvud","ren","får","orre","påfågel"]},
 				{"main":"skåp","sub":["byrå","klädskåp","vitrinskåp","bokhylla"]},
 				{"main":"bar","sub":["stor bar","liten bar","jordglobsbar"]},
-				{"main":"kök/badrum","sub":["toastol","handfat","badkar","badrumsskåp","köksskåp","köksö","kryddhylla"]}
+				{"main":"kök/badrum","sub":["toastol","handfat","badkar","badrumsskåp","köksskåp","köksö","kryddhylla"]},
+				{"main":"bord","sub":["sängbord","soffbord","matbord","drinkvagnar"]},
+				{"main":"sport","sub":["plintar","mattor","studsmattor"]},
+				{"main":"militär","sub":["gasmaskar","hjälmar","militärtelefon","ryggsäckar"]},
+				{"main":"orient","sub":["bord","skåp","lyktor","kamelsadel"]},
+				{"main":"skola","sub":["bänkar","stolar","griffeltavlor"]},
+				{"main":"brand","sub":["brandslang","brandspruta","brandhinkar"]},
+				{"main":"podier","sub":["stora","små"]},
+				{"main":"begravning","sub":["kistor","kors","gravstenar"]},
+				{"main":"vitvaror","sub":["kylskåp","diskmaskin","spis","micro"]},
+				{"main":"verktyg","sub":["snickarbänk","kedjor","verktygsväskor","elverktyg"]},
+				{"main":"dörr","sub":["dubbeldörr","enkeldörr","ladugård"]},
+				{"main":"teknikskrot","sub":["proppskåp","elmätare","kontrollbord"]},
+				{"main":"fordon","sub":["biltillbehör","moped","minimoped","cykel"]}
 			],
 			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
-			"material":["trä","plast","papp","metall","tyg","bakelit"]	
+			"material":["trä","plast","papp","metall","stål","textil","glas","porslin","sten","gummi","betong"]	
 		},
 "kostym":
 		{
@@ -71,28 +96,26 @@
 				{"main":"patinerat", "code":"ö"}
 			],
 			"type":[
-				{"name":"byxa", "code":"a"},
-				{"name":"blus", "code":"b"},
-				{"name":"kavaj", "code":"c"},
-				{"name":"kostym", "code":"d"},
-				{"name":"väst", "code":"e"},
-				{"name":"klänning", "code":"f"},
-				{"name":"shorts", "code":"g"},
-				{"name":"kjol", "code":"h"},
-				{"name":"slips", "code":"i"},
-				{"name":"smycke", "code":"j"},
-				{"name":"hatt", "code":"k"},
-				{"name":"halsduk", "code":"l"},
-				{"name":"kappa", "code":"m"},
-				{"name":"badkläder", "code":"n"},
-				{"name":"skjorta", "code":"o"},
-				{"name":"skor", "code":"p"},
-				{"name":"jeans", "code":"q"},
-				{"name":"väska", "code":"r"}
+				{"main":"byxa", "code":"100"},
+				{"main":"kjol", "code":"150"},
+				{"main":"kavaj", "code":"205"},
+				{"main":"jacka", "code":"220"},
+				{"main":"väst", "code":"260"},
+				{"main":"kostym hel", "code":"305"},
+				{"main":"kostym utan väst", "code":"307"},
+				{"main":"frack", "code":"320"},
+				{"main":"klänning", "code":"405"},
+				{"main":"kappa", "code":"505"},
+				{"main":"pyjamas", "code":"660"},
+				{"main":"rock", "code":"605"},
+				{"main":"päls", "code":"690"},
+				{"main":"blus", "code":"705"},
+				{"main":"huvudbonad", "code":"800"},
+				{"main":"fotbeklädnad", "code":"850"}
 			],
 			"size":[
-				{"main":"dam","sub":["34","36","38","40","42","44","46","S","M","L"]},
-				{"main":"herr","sub":["46","48","50","52","54","56","58","S","M","L"]},
+				{"main":"dam","sub":["34","36","38","40","42","44","46"]},
+				{"main":"herr","sub":["46","48","50","52","54","56","58"]},
 				{"main":"pojk","sub":["98","104","110","116","122","128","140","152"]},
 				{"main":"flick","sub":["98","104","110","116","122","128","140","152"]}
 			]

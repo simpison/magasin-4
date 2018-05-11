@@ -32,7 +32,7 @@ class Item extends Component {
     const y = date.getFullYear();
     const m = date.getMonth();
     const d = date.getDate();
-    return y+'-'+ (m<10 ? '0'+(m+1) : (m+1)) +'-'+(d<10 ? '0'+d : d);
+    return y+'-'+ (m<9 ? '0'+(m+1) : (m+1)) +'-'+(d<10 ? '0'+d : d);
   }
 
   render(){
@@ -48,7 +48,7 @@ class Item extends Component {
         </div>
         <span className="category1">{item.mainCategory}</span><br/>
         <span className="category2">{item.subCategory}</span><br/>
-        <span className="category3">{item.color}</span><br/>
+        <span className="category3">{item.color}    {item.material}</span><br/>
         <span className="category3">Prisgrupp: {item.priceGroup}</span><br/>
         <div className={item.available ? "ribbon-green" : "ribbon-red"}>
           <span>{item.available ? 'Tillgänglig' : 'Åter: '+ this.getReturnDate(item.rentalDate)}</span>

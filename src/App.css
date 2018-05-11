@@ -72,6 +72,7 @@ button:hover, .icon:hover {
   justify-content: space-around;
   grid-auto-rows: 100px;
   max-height: 100%;
+  overflow: scroll;
 }
 .filter-item3 { 
   grid-area: upperright; 
@@ -396,4 +397,30 @@ button:hover, .icon:hover {
 .ribbon-green span, .ribbon-red span {
   position: relative;
   top:3px;
+}
+
+
+
+
+
+
+/* -------- MENU --------- */
+.menu-wrapper{
+  text-align: center;
+  position: absolute;
+  top: 35%;
+  width: 100%;
+}
+
+.menu-btn{
+  border: none;
+  width: 200px;
+  height: 60px;
+  margin: 5px 0;
+  font-size: 20pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  background-color: #16998c;
+  border-radius: 3px;
 }

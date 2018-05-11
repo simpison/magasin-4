@@ -13,7 +13,7 @@ class Filter extends Component {
       open: false,
       priceGroups:[],
       department: null,
-      categoryTypes: [],
+      categoryTypes: []
     }
 
     this.toggleFilter = this.toggleFilter.bind(this);
@@ -59,25 +59,52 @@ class Filter extends Component {
   filterInOrder(){
     const inOrder = [];
     const fil = this.props.filter;
-
-    for(var l=0;l<fil.length;l++){
-      if(!fil[l].parent){
-        inOrder.push(fil[l]);
+    //const priceFil = this.props.filter.price;
+    const catFil = this.props.filter.category;
+    const colFil = this.props.filter.colormaterial;
+    const sizeFil = this.props.filter.size;
+    const typeFil = this.props.filter.type;
+    for(var l=0;l<catFil.length;l++){
+      if(!catFil[l].parent){
+        inOrder.push(catFil[l]);
       }    
     }
 
     for (var i = inOrder.length-1; i >= 0; i--) {
-      for (var j = 0; j < fil.length; j++) {
-        if(fil[j].parent === inOrder[i].value){
-            inOrder.splice(i+1, 0, fil[j]);
+      for (var j = 0; j < catFil.length; j++) {
+        if(catFil[j].parent === inOrder[i].value){
+            inOrder.splice(i+1, 0, catFil[j]);
         }
       }
     }
 
+    for(var m=0;m<colFil.length;m++){
+        inOrder.push(colFil[m]);
+    }
+    for(var n=0;n<typeFil.length;n++){
+        inOrder.push(typeFil[n]);
+    }
+    for(var q=0;q<sizeFil.length;q++){
+      if(!sizeFil[q].parent){
+        inOrder.push(sizeFil[q]);
+      }    
+    }
+    for (var s = inOrder.length-1; s >= 0; s--) {
+      for (var t = 0; t < sizeFil.length; t++) {
+        if(sizeFil[t].parent === inOrder[s].value){
+            inOrder.splice(s+1, 0, sizeFil[t]);
+        }
+      }
+    }
+    // for(var p=0;p<priceFil.length;p++){
+    //     inOrder.push(priceFil[p]);
+    // }
+
+
     return inOrder;
   }
 
-  getCategoryType(){
+  generateBackBtn(){
     if(this.props.categories.length>0){
       if(this.props.categories[0].parent){
         return (
@@ -123,7 +150,6 @@ class Filter extends Component {
   render(){
     const categories = this.props.categories;
     const filter = this.filterInOrder();
-    this.filterInOrder();
     return (
       <div className={this.state.open ? "filter open-filter" : "filter"}>
         <div className="filter-container">
@@ -132,9 +158,9 @@ class Filter extends Component {
               <button
                 className={fil.parent ? "filter-btn-sub" : "filter-btn-main"}
                 onClick={() => this.props.onRemoveFilter(fil)}
-                key={fil.value}
+                key={fil.value? fil.value : fil.priceGroup}
               >
-                {fil.value}
+                {fil.value? fil.value : fil.priceGroup}
               <FontAwesomeIcon className="remove" icon={faTimesCircle} /> 
               </button>
             )}
@@ -153,7 +179,7 @@ class Filter extends Component {
               )}
             </div>
 
-          {this.getCategoryType()}
+          {this.generateBackBtn()}
           {this.generateOptions()}
 
           <div className="borderLeft"></div>

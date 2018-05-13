@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import './tablet.css';
 import * as firebase from 'firebase';
 import { Link, Route, Switch } from 'react-router-dom';
 import Filter from './Filter.js';
 import Item from './Item.js';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import faArrowCircleLeft from '@fortawesome/fontawesome-free-solid/faArrowCircleLeft';
-
+import _ from 'lodash';
 
 const App = () => 
   <Main />
@@ -31,7 +32,7 @@ class Search extends Component {
       categories: [],
       currentTab: "Kategori",
       currentCat: [],
-      filter: {category:[],price:[],colormaterial:[],type:[],size:[],}
+      filter: {category:[],price:[],colormaterial:[],type:[],size:[],available: null}
     }
 
     this.handleFiltering = this.handleFiltering.bind(this);
@@ -39,6 +40,7 @@ class Search extends Component {
     this.fetchResults = this.fetchResults.bind(this);
     this.backToMainCategories = this.backToMainCategories.bind(this);
     this.priceFilter = this.priceFilter.bind(this);
+    this.availableFilter = this.availableFilter.bind(this);
     this.changeCategory = this.changeCategory.bind(this);
   }
 
@@ -95,7 +97,8 @@ class Search extends Component {
     const sub = [];
 
 
-    if(!filter.category.length>0 && !filter.price.length>0 && !filter.colormaterial.length>0 && !filter.type.length>0 && !filter.size.length>0){
+    if(!filter.category.length>0 && !filter.price.length>0 && !filter.colormaterial.length>0 && !filter.type.length>0 && !filter.size.length>0 && !filter.price.length>0 && filter.available == null){
+        console.log("INGET FILTER");
         this.setState({
           list: []
         });
@@ -157,8 +160,12 @@ class Search extends Component {
       colormaterials.push(attribute.value);
     })
 
-    filter.type.map(type =>{
-      type.push(type.value);
+    filter.type.map(t =>{
+      type.push(t.value);
+    })
+
+    filter.price.map(p =>{
+      price.push(p.priceGroup);
     })
 
     //Filter on category
@@ -214,7 +221,25 @@ class Search extends Component {
       }
     }
 
+    //Filter on price
+    if(filter.price.length>0){
+      for (var m = filteredResults.length-1; m >= 0; m--) {
+        if(!price.includes(filteredResults[m].priceGroup)){
+          filteredResults.splice(m,1);
+        }
+      }     
+    }
 
+    //Filter on availability
+    console.log(filter.available);
+    if(filter.available != null){
+      console.log(filter.available);
+      for (var n = filteredResults.length-1; n >= 0; n--) {
+        if(filteredResults[n].available != filter.available){
+          filteredResults.splice(n,1);
+        }
+      } 
+    }
 
     this.setState({
       list: filteredResults
@@ -266,8 +291,19 @@ class Search extends Component {
 
 
   handleFiltering(obj){
-    console.log("handleFiltering");
     if(this.inFilter(obj)){
+      if(obj.sub){
+        const subCat = [];
+        obj.sub.map(sub => {
+          subCat.push({                     //Set catbuttons to subcategories
+            main: sub,
+            parent: obj.main
+          });
+        });  
+        this.setState({
+          currentCat: subCat
+        });   
+      }
       return;
     }
     const curTab = this.state.currentTab;
@@ -360,35 +396,49 @@ class Search extends Component {
     this.setState({
       filter: {...this.state.filter, price:newFilter}
     });
+    this.fetchResults();
+  }
+
+  availableFilter(bool){
+    this.setState({
+      filter: {...this.state.filter, available:bool}
+    });
+    this.fetchResults();
   }
 
   inFilter(obj){
-    for(var i = 0; i < this.state.filter.category.length; i++){
-      if(this.state.filter.category[i] === obj || this.state.filter.category[i].value === obj){
+    console.log(this.state.filter);
+    console.log(obj);
+    const filter = Object.assign({}, this.state.filter);
+    for(var i = 0; i < filter.category.length; i++){
+      if(filter.category[i].value === obj.main || filter.category[i].value === obj || filter.category[i] === obj){
           return "category";
         }
       }
 
-    for(var i = 0; i < this.state.filter.price.length; i++){
-      if(this.state.filter.price[i] === obj){
+    for(var i = 0; i < filter.price.length; i++){
+      if(filter.price[i] === obj){
           return "price";
         }
       }
 
-    for(var i = 0; i < this.state.filter.colormaterial.length; i++){
-      if(this.state.filter.colormaterial[i].value === obj || this.state.filter.colormaterial[i] === obj){
+    console.log(filter.colormaterial.length);
+    for(var i = 0; i < filter.colormaterial.length; i++){
+      console.log(obj);
+      console.log(filter.size[i]);
+      if(filter.colormaterial[i].value === obj || filter.colormaterial[i] === obj){
           return "colormaterial";
         }
       }
 
-    for(var i = 0; i < this.state.filter.type.length; i++){
-      if(this.state.filter.type[i] === obj){
+    for(var i = 0; i < filter.type.length; i++){
+      if(filter.type[i] === obj || filter.type[i].value === obj.main){
           return "type";
         }
       }
 
-    for(var i = 0; i < this.state.filter.size.length; i++){
-      if(this.state.filter.size[i] === obj || this.state.filter.size[i].value === obj){
+    for(var i = 0; i < filter.size.length; i++){
+      if(filter.size[i] === obj || filter.size[i].value === obj.main || filter.size[i].value == obj){
           return "size";
         }
       }
@@ -451,12 +501,22 @@ class Search extends Component {
       })
     }
 
-    console.log("NEW FILTER: ");
     console.log(this.state.filter);
     this.fetchResults();
   }
 
+
+  sortDict(array){
+    const sortedArray = _.sortBy(array, 'priceGroup', function(n) {
+      return Math.sin(n);
+    });
+
+    return sortedArray;
+  }
+
+
   render() {
+    console.log(this.state.currentTab);
     const result = this.state.list;
     return (
       <div className="page">
@@ -469,6 +529,9 @@ class Search extends Component {
             onPriceFilter={this.priceFilter}
             onChangeCategory={this.changeCategory}
             department={this.props.location.pathname.substring(1)}
+            onAvailableFilter={this.availableFilter}
+            onSortDict={this.sortDict}
+            tab={this.state.currentTab}
         />
         <Link to='/'>
           <FontAwesomeIcon 

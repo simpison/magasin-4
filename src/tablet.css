@@ -1,3 +1,9 @@
+@media (max-width:1024px){
+/*    body {
+        background-color: lightblue;
+    }	
+*/
+
 body {
   background-color: #f3f3f4;
   font-family: 'Roboto', sans-serif;
@@ -68,21 +74,10 @@ button:hover, .icon:hover {
   grid-area: main; 
 }
 
-.category-btn-container {
-  width: 740px;
-  height: 500px;
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: space-around;
-  grid-auto-rows: 100px;
-  max-height: 100%;
-  overflow: scroll;
-}
-
 .filter-item3 { 
   grid-area: upperright; 
 }
+
 .filter-item4 { 
   grid-area: lowerright; 
   display: flex;
@@ -90,10 +85,24 @@ button:hover, .icon:hover {
   justify-content: center;
 }
 
+.category-btn-container {
+  width: 600px;
+  height: 500px;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(5, 115px);
+  justify-content: space-around;
+  grid-auto-rows: 80px;
+  max-height: 100%;
+  overflow: scroll;
+  /*border-top: 1px solid #dedede;*/
+  padding: 9px 10px 0 0;
+}
+
 .borderRight {
   border-right: 0.5px solid #dedede;
   position: absolute;
-  width: 200px;
+  width: 180px;
   top:0%;
   bottom: 10%;
   z-index: -1;
@@ -102,7 +111,7 @@ button:hover, .icon:hover {
 .borderLeft {
   border-right: 0.5px solid #dedede;
   position: absolute;
-  width: 748px;
+  width: 610px;
   top:0%;
   bottom: 10%;
   z-index: -1;
@@ -113,7 +122,7 @@ button:hover, .icon:hover {
   grid-template-areas:
     'left main upperright'
     'left main lowerright';
-  grid-template-columns: 200px 1fr 250px ;
+  grid-template-columns: 180px 1fr 200px ;
   grid-gap: 10px;
   /*background-color: pink;*/
   padding: 10px;
@@ -132,26 +141,38 @@ button:hover, .icon:hover {
   float:left;
 }
 
+.header-btn-container:after {
+    content: "";
+    display: block;
+    width: 600px;
+    border-top: 1px solid #dedede;
+	z-index: -1;
+	top:34px;
+	position: relative;
+}
+
 .header-btn{
-  width: 100px;
-  height: 30px;
+  width: 116px;
+  height: 35px;
   display: block;
   float:left;
-  font-size: 12pt;
+  font-size: 10pt;
   font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  margin-right: 10px;
+  font-weight: 500;
+  margin-right: 5px;
   border-radius: 3px;
   border: 1px solid #dedede;
   background-color: #fff;
+  color: #787878;
   border-bottom: 0px;
   position: relative;
-
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .filter-btn-main {
   display:block;
-  margin: 2px 0px 2px 30px;
+  margin: 2px 0px 2px 10px;
   border:none;
   border-radius: 15px;
   background-color: #37033b;
@@ -170,7 +191,7 @@ button:hover, .icon:hover {
 
 .filter-btn-sub {
   display:block;
-  margin: 2px 0px 2px 50px;
+  margin: 2px 0px 2px 30px;
   border:none;
   border-radius: 15px;
   background-color: #16998c;
@@ -197,27 +218,64 @@ button:hover, .icon:hover {
   background-color: #97d6e8;
   color:#fff;
   font-size:20px;
-  max-width: 140px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
   text-transform: capitalize;
+	  word-wrap: break-word;
+  overflow-wrap: break-word;
+	-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
 }
 
+/*.category-btn:focus{
+  background-color: #16998c;
+}*/
+
 .category-back-btn{
-  font-size: 65pt;
+  font-size: 60pt;
   color: #a1c7c5;
+  left:15px;
+  position: relative;
 }
 
 .price-btn-container {
   display: grid;
   grid-gap: 5px;
-  grid-template-columns: repeat(5, 35px);
-  justify-content: space-around;
-  grid-auto-rows: 35px;
+  grid-template-columns: repeat(4, 45px);
+  grid-auto-rows: 45px;
+  margin-right: 5px;
+  padding: 10px 0px 0 0;
 }
 
 .price-btn{
   border: none;
   border-radius: 3px;
-  background-color: skyblue;
+  background-color: #37033b;
+  font-size: 14pt;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #dedede;
+  padding-top: 3px;
+}
+
+.price-title {
+	font-size: 12pt;
+	text-transform: uppercase;
+  	font-family: 'Roboto', sans-serif;
+  	font-weight: 500;
+  	color: #787878;
+  	padding: 0;
+  	letter-spacing: 1px;
+  	margin-bottom: 5px;
+  	padding: 5px 0 5px 0;
+}
+
+
+.price-title,span {
+	left:-20px;
+	position: relative;
 }
 
 .available-btn{
@@ -225,9 +283,15 @@ button:hover, .icon:hover {
   border-radius: 3px;
   display:block;
   height: 50px;
-  width: 200px;
-  margin: 15px 0;
+  width: 195px;
+  margin: 0px 15px 15px 10px;
   font-size: 14pt;
+  position: relative;
+  top:-8px;
+}
+
+.active-btn {
+	background-color: hotpink;
 }
 
 
@@ -437,4 +501,9 @@ button:hover, .icon:hover {
   letter-spacing: 2px;
   background-color: #16998c;
   border-radius: 3px;
+}
+
+
+
+
 }

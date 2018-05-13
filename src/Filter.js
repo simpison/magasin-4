@@ -38,7 +38,7 @@ class Filter extends Component {
             }
 
             this.setState({
-              priceGroups: price,
+              priceGroups: this.props.onSortDict(price),
               open: true,
               department: this.props.department,
               categoryTypes: types
@@ -123,25 +123,25 @@ class Filter extends Component {
     if(this.state.department === "rekvisita" || this.state.department === "mobel"){
       return (
         this.props.categories.map(cat =>
-          <button
+          <Button
             onClick={() => this.props.onFiltering(cat)}
             key={cat.main? cat.main : cat}
             className="category-btn"
           >
             {cat.main? cat.main : cat}
-          </button>
+          </Button>
         )
       )
     }if(this.state.department === "kostym"){
       return (
         this.props.categories.map(cat =>
-          <button
+          <Button
             onClick={() => this.props.onFiltering(cat)}
             key={cat.main? cat.main : cat.name}
             className="category-btn"
           >
             {cat.main? "("+cat.code+") "+cat.main : cat.name+" ("+cat.code+")"}
-          </button>
+          </Button>
         )  
       )    
     }
@@ -167,45 +167,56 @@ class Filter extends Component {
             <div className="borderRight"></div>
           </div>
           <div className="filter-item2">
-            <div className="category-header">
+            <div className="header-btn-container">
               {this.state.categoryTypes.map(cat =>
-              <button 
-                className="category-header-btn"
+              <Tab 
+                className="header-btn"
+                nu={this.props.tab}
                 onClick={() => this.props.onChangeCategory(cat)}
                 key={cat}
+                name={cat}
                 >
                 {cat}
-              </button>
+              </Tab>
               )}
             </div>
-
-          {this.generateBackBtn()}
-          {this.generateOptions()}
-
+          <div className="category-btn-container">
+            {this.generateBackBtn()}
+            {this.generateOptions()}
+          </div>
           <div className="borderLeft"></div>
           </div>
           <div className="filter-item3">
-            Price Groups
-            {this.state.priceGroups.map(pg =>
-              <button
-                key={pg.priceGroup}
-                className="price-btn"
-                onClick={() => this.props.onPriceFilter(pg)}
-              >
-                {pg.priceGroup}
-              </button>
-            )}          
+              <div className="price-title">
+                <span>Price Groups </span>
+              </div>
+            <div className="price-btn-container">
+              {this.state.priceGroups.map(pg =>
+                <Button
+                  key={pg.priceGroup}
+                  className="price-btn"
+                  onClick={() => this.props.onPriceFilter(pg)}
+                >
+                  {pg.priceGroup}
+                </Button>
+              )}    
+            </div>      
           </div>  
           <div className="filter-item4">
             <div>
-              <button style={{"background": "#fce56d"}} className="available-btn">
+              <button 
+                  style={{"background": "#97cba0"}} 
+                  className="available-btn"
+                  onClick={()=> this.props.onAvailableFilter(true)}
+                  >
                 Tillgänglig
               </button>
-              <button style={{"background": "#fda660"}} className="available-btn">
+              <button 
+                  style={{"background": "#e69495"}} 
+                  className="available-btn"
+                  onClick={()=> this.props.onAvailableFilter(false)}
+                  >
                 Uthyrd
-              </button>
-              <button style={{"background": "#fc5c69"}} className="available-btn">
-                Försenad
               </button>
             </div>
           </div>
@@ -217,18 +228,70 @@ class Filter extends Component {
   )}
 }
 
-// class Button extends Component {
-//     constructor(){
-//       super();
-//       this.state = {
-//         type:"",
-//         value:""
-//       }
+class Button extends Component {
+  constructor(){
+    super();
+    this.state = {
+      active:false
+    }
 
-//   }
-//   render(){
-//     return()
-//   }
-//}
+  }
+
+  toggleActive(){
+    console.log("Ldhshcls");
+    const state = !this.state.active;
+    this.setState({
+      active: state
+    })
+    this.props.onClick();
+    console.log(this.state.active);
+  }
+
+  render(){
+    return(
+      <button
+        className={this.state.active ? "active-btn "+this.props.className : this.props.className}
+        onClick={()=> this.toggleActive()}
+      >
+        {this.props.children}
+      </button>
+    )
+  }
+}
+
+class Tab extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      active:false,
+      name:props.name
+    }
+  }
+
+  toggleActive(){
+    console.log(this.state.name);
+    console.log(this.props.nu);
+    console.log("_____________");
+    if(this.state.name === this.props.nu){
+      console.log("MATCH");
+       this.setState({
+        active: true
+      })     
+    }
+
+    this.props.onClick();
+  }
+
+  render(){
+    return(
+      <button
+        className={this.state.active ? "active-btn "+this.props.className : this.props.className}
+        onClick={()=> this.toggleActive()}
+      >
+        {this.props.children}
+      </button>
+    )
+  }
+}
 
 export default Filter;

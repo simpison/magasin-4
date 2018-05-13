@@ -120,7 +120,7 @@ sizes = [
 	{"main":"pojk","code":"3","sub":["98","104","110","116","122","128","140","152"]},
 	{"main":"flick","code":"4","sub":["98","104","110","116","122","128","140","152"]}
 ]
-colors = ["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"]
+colors = ["beige","blå","brun","grå","grön","gul","lila","orange","rosa","röd","svart","vit"]
 materials = ["trä","plast","papp","metall","stål","textil","glas","porslin","sten","gummi","betong"]
 locations = ["A1","A2","A3","B1","B2","B3"]
 images = ["katt1.jpg"]
@@ -158,7 +158,7 @@ for x in range(0,amount):
 		subs = categories[category_number]["sub"]
 		new["subCategory"] = subs[randint(0,len(subs)-1)]
 		#Kan lägga på fler material med append
-		new["material"] = materials[count % len(materials)] #[] #list(template["material"])
+		new["material"] = materials[randint(0, len(materials)-1)] #[] #list(template["material"])
 		#new["material"].append(materials[count % len(materials)-1])
 		#if randint(0,1) == 1:
 		#	new["material"].append(materials[(count+randint(0,2)) % len(materials)-1])

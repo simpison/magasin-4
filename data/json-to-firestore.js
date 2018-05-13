@@ -1,7 +1,7 @@
-const admin = require('./node_modules/firebase-admin');
+const admin = require('../node_modules/firebase-admin');
 const serviceAccount = require("./service-key.json");
 
-const data = require("./data_category.json");
+const data = require("./workfile.json");
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
@@ -16,7 +16,7 @@ data && Object.keys(data).forEach(key => {
         Object.keys(nestedContent).forEach(docTitle => {
             console.log(docTitle);
             admin.firestore()
-                .collection("categories")
+                .collection("items")
                 .doc(docTitle)
                 .set(nestedContent[docTitle])
                 .then((res) => {

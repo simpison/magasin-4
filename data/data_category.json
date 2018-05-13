@@ -28,7 +28,7 @@
 				{"main":"lampor","sub":["lampskärm","taklampor","golvlampor","vägglampor"]},
 				{"main":"sjukhus","sub":["förband","anatomi","operation","apparater"]}
 			],
-			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
+			"color":["beige","blå","brun","grå","grön","gul","lila","orange","rosa","röd","svart","vit"],
 			"material":["trä","plast","papp","metall","stål","textil","glas","porslin","sten","gummi","betong"]	
 		},
 "mobel": 
@@ -58,7 +58,7 @@
 				{"main":"teknikskrot","sub":["proppskåp","elmätare","kontrollbord"]},
 				{"main":"fordon","sub":["biltillbehör","moped","minimoped","cykel"]}
 			],
-			"color":["beige","blå","brun","grön","gul","lila","orange","rosa","röd","svart","vit"],
+			"color":["beige","blå","brun","grå","grön","gul","lila","orange","rosa","röd","svart","vit"],
 			"material":["trä","plast","papp","metall","stål","textil","glas","porslin","sten","gummi","betong"]	
 		},
 "kostym":
